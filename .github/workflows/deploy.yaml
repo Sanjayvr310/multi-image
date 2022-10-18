@@ -18,5 +18,13 @@ jobs:
       - 
         name: build
         uses: actions/checkout@v2
-      - run: docker build -t sanjayvrs/test-client ./client  
-      - run: docker push sanjayvrs/test-client
+      - run: docker build -t sanjayvrs/multi-client-10-14 ./client
+      - run: docker build -t sanjayvrs/multi-nginx-10-14 ./nginx
+      - run: docker build -t sanjayvrs/multi-server-10-14 ./server
+      - run: docker build -t sanjayvrs/multi-worker-10-14 ./worker
+ 
+      - run: docker push sanjayvrs/multi-client-10-14
+      - run: docker push sanjayvrs/multi-nginx-10-14
+      - run: docker push sanjayvrs/multi-server-10-14
+      - run: docker push sanjayvrs/multi-worker-10-14
+
