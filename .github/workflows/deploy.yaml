@@ -33,8 +33,8 @@ jobs:
     steps:        
       
       - name: Build and push Docker images
-        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
-        with:
-          context: ./client
-          push: true      
-          tags: client  
+      - uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+      - run: docker build -t sanjayvrs/multi-worker-10-14 ./worker
+      - run: docker push sanjayvrs/multi-worker-10-14
+  
+
