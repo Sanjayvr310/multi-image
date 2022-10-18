@@ -37,4 +37,4 @@ jobs:
         with:
           context: ./client
           push: true      
-            
+          tags: client  
